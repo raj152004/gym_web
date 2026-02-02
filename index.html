@@ -1,422 +1,699 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 
 <head>
-	<title>Gym-forever</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="animate.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GYMCITY</title>
+
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-	<header>
-		<div class="container">
-			<div class="logo">
-				<a href="">GYM<span>NACITY</span></a>
-			</div>
-			<a href="javascript:void(0)" class="ham-burger">
-				<span></span>
-				<span></span>
+<body class="antialiased bg-black text-white selection:bg-gold selection:text-black">
+
+	<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 glass-nav border-b border-white/10">
+		<div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+
+			<a href="#" class="text-3xl font-black tracking-widest uppercase relative group">
+				<span class="gold-shine drop-shadow-md">GYMCITY</span>
 			</a>
-			<div class="nav">
-				<ul>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#service">Services</a></li>
-					<li><a href="#classes">Classes</a></li>
-					<li><a href="#schedule">Schedule</a></li>
-					<li><a href="#price">Price</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
+
+			<ul class="hidden md:flex space-x-8 text-xs font-bold tracking-[0.2em] text-gray-400">
+				<li class="nav-item"><a href="#home">HOME</a></li>
+				<li class="nav-item"><a href="#services">SERVICES</a></li>
+				<li class="nav-item"><a href="#schedule">SCHEDULE</a></li>
+				<li class="nav-item"><a href="#price">MEMBERSHIP</a></li>
+			</ul>
+
+			<button onclick="toggleMenu()" class="md:hidden text-2xl text-gold hover:text-white transition-colors">
+				<i class="fa-solid fa-bars shadow-lg"></i>
+			</button>
+
+		</div>
+
+		<div id="mobile-menu"
+			class="hidden absolute w-full left-0 glass-mobile border-t border-white/10 overflow-hidden transition-all duration-300 origin-top transform scale-y-0">
+			<ul class="flex flex-col p-8 space-y-6 text-center font-bold text-sm tracking-widest text-gray-300">
+				<li class="hover:text-gold hover:scale-105 transition-transform"><a href="#home"
+						onclick="toggleMenu()">HOME</a></li>
+				<li class="hover:text-gold hover:scale-105 transition-transform"><a href="#services"
+						onclick="toggleMenu()">SERVICES</a></li>
+
+				<li class="hover:text-gold hover:scale-105 transition-transform"><a href="#schedule"
+						onclick="toggleMenu()">SCHEDULE</a></li>
+				<li class="hover:text-gold hover:scale-105 transition-transform"><a href="#price"
+						onclick="toggleMenu()">MEMBERSHIP</a></li>
+				<li><a href="#booking" onclick="toggleMenu()" class="gold-shine drop-shadow-md">JOIN NOW</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+		<div class="absolute inset-0 z-0">
+			<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop"
+				alt="Gym Background" class="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom">
+			<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80"></div>
+		</div>
+
+		<div class="relative z-10 text-center px-4">
+			<h4 class="text-gold tracking-[0.5em] text-sm md:text-base mb-4 font-bold animate-fade-in-up">WELCOME</h4>
+			<h1
+				class="gold-shine text-5xl md:text-7xl font-black uppercase mb-6 leading-tight animate-fade-in-up delay-100">
+				GYMCITY
+			</h1>
+
+			<p
+				class="text-gray-300 text-sm md:text-lg mb-10 max-w-xl mx-auto font-light leading-relaxed animate-fade-in-up delay-200">
+				SWEAT, SACRIFICE, SUCCESS. </p>
+
+			<div class="flex flex-col md:flex-row gap-6 justify-center animate-fade-in-up delay-300">
+				<a href="#price"
+					class="px-10 py-4 bg-gold text-black font-black tracking-widest hover:bg-white transition-colors">
+					JOIN
+				</a>
+				<a href="#schedule"
+					class="px-10 py-4 border border-white/30 text-white hover:border-gold hover:text-gold font-bold tracking-widest transition-all backdrop-blur-sm">
+					VIEW CLASS
+				</a>
 			</div>
 		</div>
-	</header>
-
-	<section class="home wow flash" id="home">
-		<div class="container">
-			<h1>"Strong <span>Body</span>, Strong <span>Mind</span>."</h1>
-
-		</div>
-
-		<a href="#about" class="go-down">
-			<i class="fa fa-angle-down" aria-hidden="true"></i>
-		</a>
-w3
 	</section>
 
-	<section class="about" id="about">
-		<div class="container">
-			<div class="content">
-				<div class="box wow bounceInUp">
-					<div class="inner">
-						<div class="img">
-							<img src="a1.jpeg" alt="about" />
-						</div>
-						<div class="text">
-							<h4>Free Consultation</h4>
-							<p>"Start your fitness journey with a free expert consultation tailored to your goals."</p>
-						</div>
+	<section id="services" class="py-32 bg-black relative overflow-hidden">
+
+		<div class="absolute inset-0 opacity-20"
+			style="background-image: radial-gradient(#333 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+		<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+			<div class="text-center mb-24 animate-fade-in-up">
+				<h4 class="text-gold tracking-[0.5em] text-xs font-bold mb-4 uppercase">What We Offer</h4>
+				<h2 class="gold-shine drop-shadow-md text-4xl md:text-5xl font-black mb-4 uppercase">
+					services <span class="text-white"></span>
+				</h2>
+				<div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-10">
+
+				<div class="service-card-premium group">
+					<div class="absolute inset-0 z-0">
+						<img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800&auto=format&fit=crop"
+							class="w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700">
+						<div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+					</div>
+
+					<div
+						class="relative z-10 h-full flex flex-col justify-end p-8 border border-white/10 group-hover:border-gold/50 transition-colors duration-500">
+						<div
+							class="absolute top-4 right-6 text-9xl font-black text-white/5 group-hover:text-gold/10 transition-colors duration-500">
+							01</div>
+
+						<h3
+							class="text-3xl font-black uppercase mb-2 text-white group-hover:text-gold transition-colors duration-300">
+							Personal<br>Training
+						</h3>
+
+						<div class="w-12 h-1 bg-gold mb-6 group-hover:w-full transition-all duration-500"></div>
+
+						<p
+							class="text-gray-400 text-sm mb-8 leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+							One-on-one coaching with elite instructors to sculpt your physique using data-driven
+							techniques.
+						</p>
+
+						<a href="#booking"
+							class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white uppercase group-hover:text-gold transition-colors">
+							Book Session <i class="fa-solid fa-arrow-right"></i>
+						</a>
 					</div>
 				</div>
-				<div class="box wow bounceInUp" data-wow-delay="0.2s">
-					<div class="inner">
-						<div class="img">
-							<img src="a2.jpeg" alt="about" />
-						</div>
-						<div class="text">
-							<h4>Best Training</h4>
-							<p>"Get world-class training designed to push your limits and transform your body."</p>
-						</div>
+
+				<div class="service-card-premium group transform md:-translate-y-8">
+					<div class="absolute inset-0 z-0">
+						<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop"
+							class="w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700">
+						<div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+					</div>
+
+					<div
+						class="relative z-10 h-full flex flex-col justify-end p-8 border border-white/10 group-hover:border-gold/50 transition-colors duration-500">
+						<div
+							class="absolute top-4 right-6 text-9xl font-black text-white/5 group-hover:text-gold/10 transition-colors duration-500">
+							02</div>
+
+						<h3
+							class="text-3xl font-black uppercase mb-2 text-white group-hover:text-gold transition-colors duration-300">
+							Cardio<br>& HIIT
+						</h3>
+
+						<div class="w-12 h-1 bg-gold mb-6 group-hover:w-full transition-all duration-500"></div>
+
+						<p
+							class="text-gray-400 text-sm mb-8 leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+							High-intensity intervals designed to burn fat and increase endurance rapidly in our
+							metabolic zone.
+						</p>
+
+						<a href="#booking"
+							class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white uppercase group-hover:text-gold transition-colors">
+							Book Session <i class="fa-solid fa-arrow-right"></i>
+						</a>
 					</div>
 				</div>
-				<div class="box wow bounceInUp" data-wow-delay="0.4s">
-					<div class="inner">
-						<div class="img">
-							<img src="c3.jpeg" alt="about" />
-						</div>
-						<div class="text">
-							<h4>Build Perfect Body</h4>
-							<p>"Achieve your ideal physique with structured workouts crafted for real, lasting results."
-							</p>
-						</div>
+
+				<div class="service-card-premium group">
+					<div class="absolute inset-0 z-0">
+						<img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=800&auto=format&fit=crop"
+							class="w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700">
+						<div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+					</div>
+
+					<div
+						class="relative z-10 h-full flex flex-col justify-end p-8 border border-white/10 group-hover:border-gold/50 transition-colors duration-500">
+						<div
+							class="absolute top-4 right-6 text-9xl font-black text-white/5 group-hover:text-gold/10 transition-colors duration-500">
+							03</div>
+
+						<h3
+							class="text-3xl font-black uppercase mb-2 text-white group-hover:text-gold transition-colors duration-300">
+							Strength<br>& Power
+						</h3>
+
+						<div class="w-12 h-1 bg-gold mb-6 group-hover:w-full transition-all duration-500"></div>
+
+						<p
+							class="text-gray-400 text-sm mb-8 leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
+							Heavy lifting zones equipped with olympic standard weights, calibrated plates, and pro
+							machines.
+						</p>
+
+						<a href="#booking"
+							class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white uppercase group-hover:text-gold transition-colors">
+							Book Session <i class="fa-solid fa-arrow-right"></i>
+						</a>
 					</div>
 				</div>
+
 			</div>
 		</div>
+	</section>
 
-		<section class="service" id="service">
-			<div class="container">
-				<div class="content">
-					<div class="text box wow slideInLeft">
-						<h2>Services</h2>
-						<p>Our gym offers a complete range of fitness services designed to match your personal goals.
-							From strength training and muscle building to fat loss and body toning, every program is
-							crafted to give you visible results. With certified trainers and modern equipment, we make
-							sure each workout session is effective, safe, and tailored to your level.
-						</p>
-						<p>We also provide personalized diet plans, cardio sessions, flexibility training, and
-							specialized transformation programs.
-							Whether you are a beginner or an experienced athlete, our expert coaches guide you with the
-							right techniques, motivation, and consistency to help you achieve your best shape.
-						</p>
-						<a href="" class="btn">Start Now</a>
-					</div>
-					<div class="accordian box wow slideInRight">
-						<div class="accordian-container active">
-							<div class="head">
-								<h4>Cardiovascular Equipment</h4>
-								<span class="fa fa-angle-down"></span>
-							</div>
-							<div class="body">
-								<p>"Boost your endurance with advanced cardio machines built for high-performance
-									training."</p>
-							</div>
+	<section id="schedule" class="py-24 bg-zinc-950 relative overflow-hidden">
+
+		<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px] pointer-events-none">
+		</div>
+		<div
+			class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] pointer-events-none">
+		</div>
+
+		<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+			<div class="grid lg:grid-cols-12 gap-12 items-start">
+
+				<div class="lg:col-span-4 sticky top-24">
+					<h4 class="text-white/40 font-bold text-xs tracking-[0.5em] mb-4 uppercase animate-fade-in-up">Time
+						To Grind</h4>
+
+					<h2
+						class="text-5xl md:text-6xl font-black uppercase mb-6 leading-none animate-fade-in-up delay-100">
+						<span class="gold-shine">SCHEDULE</span>
+					</h2>
+
+					<div class="w-20 h-1 bg-gold mb-8"></div>
+
+					<p class="text-gray-400 text-sm leading-relaxed mb-10 font-light border-l-2 border-white/10 pl-4">
+						CHOOSE YOUR TIME. TRAIN LIKE THE ELITE. DOMINATE EVERY SESSION.
+					</p>
+
+					<div class="relative group rounded-xl overflow-hidden shadow-2xl">
+						<div
+							class="absolute inset-0 bg-gold/20 mix-blend-overlay group-hover:bg-transparent transition-all duration-500 z-10">
 						</div>
-						<div class="accordian-container">
-							<div class="head">
-								<h4>Strength Training Equipment</h4>
-								<span class="fa fa-angle-up"></span>
-							</div>
-							<div class="body">
-								<p>"Build muscle and increase power with high-quality strength training machines and
-									free weights."</p>
-							</div>
-						</div>
-						<div class="accordian-container">
-							<div class="head">
-								<h4>Group Fitness Class</h4>
-								<span class="fa fa-angle-up"></span>
-							</div>
-							<div class="body">
-								<p>"Stay motivated and have fun with energetic group workouts led by certified
-									instructors."</p>
-							</div>
-						</div>
-						<div class="accordian-container">
-							<div class="head">
-								<h4>Other Services</h4>
-								<span class="fa fa-angle-up"></span>
-							</div>
-							<div class="body">
-								<p>"Enhance your fitness journey with additional services designed for comfort, support,
-									and better results."</p>
-							</div>
+						<img src="p2.jpeg" alt="Schedule"
+							class="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700">
+
+						<div
+							class="absolute bottom-4 left-4 z-20 bg-black/80 backdrop-blur-md border border-gold/30 px-4 py-2 rounded-lg">
+							<p class="text-gold text-xs font-black uppercase tracking-widest">Open 7 Days</p>
 						</div>
 					</div>
 				</div>
+
+				<div class="lg:col-span-8">
+					<div
+						class="glass-card rounded-2xl border border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+
+						<div class="h-1 w-full bg-gradient-to-r from-transparent via-gold to-transparent opacity-50">
+						</div>
+
+						<div class="overflow-x-auto">
+							<table class="w-full text-left border-collapse">
+								<thead>
+									<tr
+										class="bg-black/50 border-b border-white/10 text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">
+										<th class="p-6">Day</th>
+										<th class="p-6">Time</th>
+										<th class="p-6">Session / Trainer</th>
+										<th class="p-6 whitespace-nowrap">Room</th>
+									</tr>
+								</thead>
+								<tbody class="text-sm">
+
+									<tr
+										class="group border-b border-white/5 hover:bg-gold/10 transition-colors duration-300">
+										<td class="p-6">
+											<span
+												class="font-black text-xl text-white group-hover:text-gold transition-colors font-oswald uppercase">Monday</span>
+										</td>
+										<td class="p-6 whitespace-nowrap text-gray-400 font-mono">
+											9:00 AM - 10:00 AM
+										</td>
+										<td class="p-6">
+											<div class="font-bold text-white uppercase tracking-wide mb-1">Building
+												<span
+													class="text-[10px] bg-zinc-800 text-gray-400 px-2 py-0.5 rounded ml-2">Beginner</span>
+											</div>
+											<div class="text-xs text-gold flex items-center gap-2"><i
+													class="fa-solid fa-user-ninja"></i>Mr.Arjun</div>
+										</td>
+										<td class="p-6">
+											<span
+												class="text-xs font-bold border border-white/20 px-2 py-1 rounded text-gray-400">21</span>
+										</td>
+									</tr>
+
+									<tr
+										class="group border-b border-white/5 hover:bg-gold/10 transition-colors duration-300">
+										<td class="p-6">
+											<span
+												class="font-black text-xl text-white group-hover:text-gold transition-colors font-oswald uppercase">Tuesday</span>
+										</td>
+										<td class="p-6 whitespace-nowrap text-gray-400 font-mono">
+											10:00 AM - 11:00 AM
+										</td>
+										<td class="p-6">
+											<div class="font-bold text-white uppercase tracking-wide mb-1">Cardio
+												<span
+													class="text-[10px] bg-zinc-800 text-gray-400 px-2 py-0.5 rounded ml-2">Inter</span>
+											</div>
+											<div class="text-xs text-gold flex items-center gap-2"><i
+													class="fa-solid fa-user-ninja"></i> Mr.Deepak</div>
+										</td>
+										<td class="p-6">
+											<span
+												class="text-xs font-bold border border-white/20 px-2 py-1 rounded text-gray-400">22</span>
+										</td>
+									</tr>
+
+									<tr
+										class="group border-b border-white/5 hover:bg-gold/10 transition-colors duration-300">
+										<td class="p-6">
+											<span
+												class="font-black text-xl text-white group-hover:text-gold transition-colors font-oswald uppercase">Wednesday</span>
+										</td>
+										<td class="p-6 whitespace-nowrap text-gray-400 font-mono">
+											9:30 AM - 10:30 AM
+										</td>
+										<td class="p-6">
+											<div class="font-bold text-white uppercase tracking-wide mb-1">Yoga
+												<span
+													class="text-[10px] bg-zinc-800 text-gray-400 px-2 py-0.5 rounded ml-2">All</span>
+											</div>
+											<div class="text-xs text-gold flex items-center gap-2"><i
+													class="fa-solid fa-user-ninja"></i> Mr.Vikram</div>
+										</td>
+										<td class="p-6">
+											<span
+												class="text-xs font-bold border border-white/20 px-2 py-1 rounded text-gray-400">23</span>
+										</td>
+									</tr>
+
+									<tr
+										class="group border-b border-white/5 hover:bg-gold/10 transition-colors duration-300">
+										<td class="p-6">
+											<span
+												class="font-black text-xl text-white group-hover:text-gold transition-colors font-oswald uppercase">Thursday</span>
+										</td>
+										<td class="p-6 whitespace-nowrap text-gray-400 font-mono">
+											11:00 AM - 12:00 PM
+										</td>
+										<td class="p-6">
+											<div class="font-bold text-white uppercase tracking-wide mb-1">Strength
+												<span
+													class="text-[10px] bg-zinc-800 text-gray-400 px-2 py-0.5 rounded ml-2">Adv</span>
+											</div>
+											<div class="text-xs text-gold flex items-center gap-2"><i
+													class="fa-solid fa-user-ninja"></i> r.Ankit </div>
+										</td>
+										<td class="p-6">
+											<span
+												class="text-xs font-bold border border-white/20 px-2 py-1 rounded text-gray-400">21</span>
+										</td>
+									</tr>
+
+									<tr
+										class="group border-b border-white/5 hover:bg-gold/10 transition-colors duration-300">
+										<td class="p-6">
+											<span
+												class="font-black text-xl text-white group-hover:text-gold transition-colors font-oswald uppercase">Friday</span>
+										</td>
+										<td class="p-6 whitespace-nowrap text-gray-400 font-mono">
+											10:00 AM - 11:00 AM
+										</td>
+										<td class="p-6">
+											<div class="font-bold text-white uppercase tracking-wide mb-1">Zumba
+												<span
+													class="text-[10px] bg-zinc-800 text-gray-400 px-2 py-0.5 rounded ml-2">All</span>
+											</div>
+											<div class="text-xs text-gold flex items-center gap-2"><i
+													class="fa-solid fa-user-ninja"></i> Mr.Karan</div>
+										</td>
+										<td class="p-6">
+											<span
+												class="text-xs font-bold border border-white/20 px-2 py-1 rounded text-gray-400">22</span>
+										</td>
+									</tr>
+
+									<tr class="group hover:bg-gold/10 transition-colors duration-300">
+										<td class="p-6">
+											<span
+												class="font-black text-xl text-white group-hover:text-gold transition-colors font-oswald uppercase">Saturday</span>
+										</td>
+										<td class="p-6 whitespace-nowrap text-gray-400 font-mono">
+											9:00 AM - 10:00 AM
+										</td>
+										<td class="p-6">
+											<div class="font-bold text-white uppercase tracking-wide mb-1">CrossFit
+												<span
+													class="text-[10px] bg-zinc-800 text-gray-400 px-2 py-0.5 rounded ml-2">Inter</span>
+											</div>
+											<div class="text-xs text-gold flex items-center gap-2"><i
+													class="fa-solid fa-user-ninja"></i> Mr.Siddharth </div>
+										</td>
+										<td class="p-6">
+											<span
+												class="text-xs font-bold border border-white/20 px-2 py-1 rounded text-gray-400">21</span>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<section class="classes" id="classes">
-			<div class="container">
-				<div class="content">
-					<div class="box img wow slideInLeft">
-						<img src="g5.jpeg" alt="classes" />
-						<img src="g6.png" alt="">
-					</div>
-					<div class="box text wow slideInRight">
-						<h2>Our Classes</h2>
-						<p>Our classes are designed to give every member the perfect balance of challenge, fun, and
-							results. From high-intensity training sessions to relaxing flexibility and mobility classes,
-							each workout is led by expert instructors who guide you step-by-step. Whether you want to
-							burn calories, build strength, improve stamina, or simply enjoy group energy, our diverse
-							class options ensure there's something for every fitness level.
-						</p>
-						<div class="class-items">
-							<div class="item wow bounceInUp">
-								<div class="item-img">
-									<img src="g6.png" alt="classes" />
-									<div class="price">
-										$249
-									</div>
-								</div>
-								<div class="item-text">
-									<h4>Stretching Training</h4>
-									<p>"Improve flexibility and reduce muscle tension with guided stretching routines."
-									</p>
-									<a href="">Read more...</a>
-								</div>
-							</div>
-							<div class="item wow bounceInUp">
-								<div class="item-text">
-									<h4>Power-Packed Training Sessions</h4>
-									<p>"High-energy sessions designed to boost strength, stamina, and overall
-										performance."</p>
-									<a href="">Read more...</a>
-								</div>
-								<div class="item-img">
-									<img src="g1.jpeg" alt="classes" />
-									<div class="price">
-										$199
-									</div>
-								</div>
-							</div>
+	<section id="price" class="py-32 bg-black relative overflow-hidden">
 
-						</div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[150px] pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <div class="text-center mb-20 animate-fade-in-up">
+            <h4 class="text-white/40 font-bold text-xs tracking-[0.5em] mb-4 uppercase">Invest In Yourself</h4>
+            <h2 class="text-5xl md:text-7xl font-black uppercase mb-6 leading-none">
+                MEMBER<span class="gold-shine">ship</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm tracking-wide">SELECT YOUR ACCESS PLAN</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+
+            <div class="membership-card group">
+                <div class="absolute inset-0 bg-zinc-900 border border-white/10 group-hover:border-white/30 transition-colors">
+                </div>
+                <div class="relative p-10 flex flex-col h-full">
+                    <h3 class="text-2xl font-black text-gray-400 uppercase tracking-tighter mb-2">Silver</h3>
+                    <p class="text-xs font-bold text-gray-600 uppercase tracking-widest mb-8">Standard Access</p>
+
+                    <div class="mb-8">
+                        <span class="text-4xl font-black text-white">₹1,499</span>
+                        <span class="text-gray-500 text-sm font-bold">/ MO</span>
+                    </div>
+
+                    <ul class="space-y-4 mb-10 text-sm text-gray-400 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> 24/7 Gym Access</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Smart Lockers</li>
+                        <li class="flex items-center gap-3 text-gray-700"><i class="fa-solid fa-xmark"></i> Personal Trainer</li>
+                    </ul>
+
+                    <a href="#booking"
+                        class="block text-center w-full py-4 border border-white/20 hover:bg-white hover:text-black text-white font-bold uppercase tracking-[0.2em] text-xs transition-all">
+                        Join Silver
+                    </a>
+                </div>
+            </div>
+
+            <div class="membership-card-gold relative transform md:-translate-y-6 z-20">
+                <div class="absolute -inset-[2px] bg-gradient-to-b from-[#FFD700] to-[#B8860B] rounded-sm opacity-100">
+                </div>
+
+                <div class="relative bg-black h-full p-10 flex flex-col">
+                    <div class="absolute top-0 right-0 bg-gradient-to-r from-[#FFD700] to-[#B8860B] text-black text-[10px] font-black px-4 py-1 uppercase tracking-widest">
+                        Best Value
+                    </div>
+
+                    <h3 class="text-4xl font-black uppercase tracking-tighter mb-1 mt-2">Gold</h3>
+                    <p class="gold-shine font-bold text-gold uppercase tracking-widest mb-8">Prime Access</p>
+
+                    <div class="mb-8 p-4 bg-zinc-900/50 border border-gold/20">
+                        <span class="text-5xl font-black text-white">₹8,499</span>
+                        <span class="text-gold text-sm font-bold">/ YR</span>
+                        <div class="text-[10px] text-green-400 font-bold uppercase mt-1 tracking-widest">Save 20% Annually</div>
+                    </div>
+
+                    <ul class="space-y-4 mb-10 text-sm text-gray-300 flex-grow font-medium">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span class="text-white">All Silver Features</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span class="text-white">5 PT Sessions</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span class="text-white">Diet Consultation</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold"></i> <span class="text-white">Body Analysis</span></li>
+                    </ul>
+
+                    <a href="#booking"
+                        class="block text-center w-full py-5 bg-gradient-to-r from-[#FFD700] to-[#B8860B] text-black font-black uppercase tracking-[0.2em] text-xs hover:scale-105 transition-transform shadow-[0_10px_40px_rgba(212,175,55,0.3)]">
+                        Join Gold
+                    </a>
+                </div>
+            </div>
+
+            <div class="membership-card group">
+                <div class="absolute inset-0 bg-zinc-900 border border-white/10 group-hover:border-white/30 transition-colors">
+                </div>
+                <div class="relative p-10 flex flex-col h-full">
+                    <h3 class="text-2xl font-black text-gray-400 uppercase tracking-tighter mb-2">Platinum</h3>
+                    <p class="text-xs font-bold text-gray-600 uppercase tracking-widest mb-8">VIP Access</p>
+
+                    <div class="mb-8">
+                        <span class="text-4xl font-black text-white">₹15,000</span>
+                        <span class="text-gray-500 text-sm font-bold">/ YR</span>
+                    </div>
+
+                    <ul class="space-y-4 mb-10 text-sm text-gray-400 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Unlimited PT</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Spa & Sauna</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-white"></i> Guest Pass</li>
+                    </ul>
+
+                    <a href="#booking"
+                        class="block text-center w-full py-4 border border-white/20 hover:bg-white hover:text-black text-white font-bold uppercase tracking-[0.2em] text-xs transition-all">
+                        Join Platinum
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+	<section id="booking" class="py-24 bg-black">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="glass-card p-8 md:p-12 border border-white/10 rounded-xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent">
+            </div>
+
+            <h2 class="text-3xl font-black text-center mb-2 uppercase">join <span class="gold-shine">now</span></h2>
+            <p class="text-gray-500 text-center mb-10 text-sm">BOOK YOUR TRIAL SESSION TODAY AND TRAIN WITH THE BEST.</p>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                
+                <input type="hidden" name="access_key" value="828d671c-d89b-4e88-8866-53f5d2cb8148">
+                
+                <input type="hidden" name="subject" value="New Gym Booking Enquiry">
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="relative">
+                        <input type="text" name="name" placeholder="FULL NAME" required
+                            class="w-full bg-black/50 border border-white/10 p-4 text-xs font-bold text-white uppercase tracking-widest focus:border-gold outline-none transition-colors">
+                    </div>
+                    <div class="relative">
+                        <input type="text" name="phone" placeholder="PHONE NUMBER" required
+                            class="w-full bg-black/50 border border-white/10 p-4 text-xs font-bold text-white uppercase tracking-widest focus:border-gold outline-none transition-colors">
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <select name="service"
+                        class="w-full bg-zinc-900 border border-white/10 p-4 text-xs font-bold text-white uppercase tracking-widest focus:border-gold outline-none transition-colors appearance-none cursor-pointer">
+                        <option class="bg-black text-gray-500" value="" disabled selected>Select Service</option>
+                        <option class="bg-black text-white py-2" value="Body Building">Body Building</option>
+                        <option class="bg-black text-white py-2" value="Personal Training">Personal Training</option>
+                        <option class="bg-black text-white py-2" value="Yoga Class">Yoga Class</option>
+                    </select>
+                    <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gold/50 group-hover:text-gold transition-colors">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <input type="email" name="email" placeholder="EMAIL ADDRESS" required
+                    class="w-full bg-black/50 border border-white/10 p-4 text-xs font-bold text-white uppercase tracking-widest focus:border-gold outline-none transition-colors">
+
+                <textarea name="message" rows="4" placeholder="ADDITIONAL MESSAGE"
+                    class="w-full bg-black/50 border border-white/10 p-4 text-xs font-bold text-white uppercase tracking-widest focus:border-gold outline-none transition-colors"></textarea>
+
+                <button type="submit"
+                    class="w-full py-5 bg-gold text-black font-black uppercase tracking-[0.2em] hover:bg-white transition-colors cursor-pointer">
+                    Confirm Booking
+                </button>
+
+            </form>
+            </div>
+    </div>
+</section>
+	
+<footer class="relative bg-zinc-950 pt-24 pb-12 overflow-hidden border-t border-white/10 font-sans">
+
+		<div
+			class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#D4AF37]/5 rounded-full blur-[100px] pointer-events-none">
+		</div>
+
+		<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+			<div class="grid md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-12">
+
+				<div class="md:col-span-1 space-y-6">
+					<a href="#" class="text-3xl font-black tracking-widest uppercase block font-oswald">
+						GYM<span class="gold-shine drop-shadow-md">CITY</span>
+					</a>
+					<p class="text-gray-500 text-xs leading-relaxed max-w-xs font-medium">
+						SETTING THE BENCHMARK FOR PHYSICAL TRANSFORMATION — WHERE ELITE TRAIN ELITE. </p>
+					<div class="flex items-center gap-2">
+						<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+						<span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Gym is Open</span>
 					</div>
 				</div>
+
+				<div>
+					<h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-6 font-oswald">Explore</h4>
+					<ul class="space-y-4 text-sm text-gray-500 font-medium">
+						<li>
+							<a href="#home"
+								class="hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+								<i
+									class="fa-solid fa-arrow-right opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-[#D4AF37] text-xs"></i>
+								Home
+							</a>
+						</li>
+						<li>
+							<a href="#services"
+								class="hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+								<i
+									class="fa-solid fa-arrow-right opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-[#D4AF37] text-xs"></i>
+								Services
+							</a>
+						</li>
+						<li>
+							<a href="#gallery"
+								class="hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+								<i
+									class="fa-solid fa-arrow-right opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-[#D4AF37] text-xs"></i>
+								Gallery
+							</a>
+						</li>
+						<a href="#price" class="hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+							<i
+								class="fa-solid fa-arrow-right opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-[#D4AF37] text-xs"></i>
+							Membership
+						</a>
+						</li>
+						<li>
+							<a href="#booking"
+								class="hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+								<i
+									class="fa-solid fa-arrow-right opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-[#D4AF37] text-xs"></i>
+								Join Now
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-6 font-oswald">Contact</h4>
+					<ul class="space-y-4 text-sm text-gray-500 font-medium">
+						<li class="flex items-start gap-3">
+							<i class="fa-solid fa-location-dot text-[#D4AF37] mt-1"></i>
+							<span>Rau, Indore,<br>Madhya Pradesh, India</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<i class="fa-solid fa-phone text-[#D4AF37]"></i>
+							<span>+91 9685129900</span>
+						</li>
+						<li class="flex items-center gap-3">
+							<i class="fa-solid fa-envelope text-[#D4AF37]"></i>
+							<span>contact@gymcity.com</span>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-6 font-oswald">Social media
+						platform</h4>
+					<div class="flex gap-4">
+						<a href="#"
+							class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:bg-white hover:text-black hover:scale-110 transition-all duration-300">
+							<i class="fa-brands fa-instagram text-lg"></i>
+						</a>
+						<a href="#"
+							class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:scale-110 transition-all duration-300">
+							<i class="fa-brands fa-whatsapp text-lg"></i>
+						</a>
+						<a href="#"
+							class="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:bg-[#FF0000] hover:text-white hover:border-[#FF0000] hover:scale-110 transition-all duration-300">
+							<i class="fa-brands fa-youtube text-lg"></i>
+						</a>
+					</div>
+				</div>
+
 			</div>
-		</section>
 
-		<section class="start-today">
-			<div class="container">
-				<div class="content">
-					<div class="box text wow slideInLeft">
-						<h2>Start Your Training Today</h2>
-						<p>"Kickstart your fitness journey today with personalized, expert-led training programs.
-							Whether you’re a beginner or an experienced athlete, our classes are designed to challenge
-							you, build strength, and help you achieve your goals effectively."
-						</p>
-						<a href="" class="btn">Start Now</a>
-					</div>
-					<div class="box img wow slideInRight">
-						<img src="a3.jpeg" alt="start today" />
-					</div>
-
+			<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+				<div class="text-[10px] text-gray-600 uppercase tracking-widest font-bold">
+					<marquee>&copy; 2026 GymCity Supreme. All Rights
+						Reserved.</marquee>
 				</div>
+
+				<a href="#home" id="backToTop"
+					class="group flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] hover:text-white transition-colors cursor-pointer">
+					Back to Top
+					<span
+						class="w-8 h-8 border border-[#D4AF37]/30 rounded-full flex items-center justify-center group-hover:bg-[#D4AF37] group-hover:text-black transition-all">
+						<i class="fa-solid fa-arrow-up"></i>
+					</span>
+				</a>
 			</div>
-		</section>
+		</div>
+	</footer>
 
-		<section class="schedule" id="schedule">
-			<div class="container">
-				<div class="content">
-					<div class="box text wow slideInLeft">
-						<h2>Classes Schedule</h2>
-						<p>
-							"Our flexible class schedule is designed to fit every lifestyle. With morning, afternoon,
-							and evening sessions, you can choose the timing that works best for you. Each class is led
-							by certified instructors who ensure personalized attention, effective workouts, and a
-							motivating environment, so you never miss a chance to stay on track with your fitness
-							goals."
-						</p>
-						<img src="g2.jpeg" alt="schedule" />
-					</div>
-					<div class="box timing wow slideInRight">
-						<table class="table">
-							<tbody>
-								<tr>
-									<td class="day">Monday</td>
-									<td><strong>9:00 AM – 10:00 AM</strong></td>
-									<td>Body Building (Beginner) <br /> Trainer: Arjun Sharma</td>
-									<td>Room No: 21</td>
-								</tr>
-								<tr>
-									<td class="day">Tuesday</td>
-									<td><strong>10:00 AM – 11:00 AM</strong></td>
-									<td>Cardio / HIIT (Intermediate) <br /> Trainer: Rohit Sharma</td>
-									<td>Room No: 22</td>
-								</tr>
-								<tr>
-									<td class="day">Wednesday</td>
-									<td><strong>9:30 AM – 10:30 AM</strong></td>
-									<td>Yoga / Stretching (All Levels) <br /> Trainer: Vikram Singh</td>
-									<td>Room No: 23</td>
-								</tr>
-								<tr>
-									<td class="day">Thursday</td>
-									<td><strong>11:00 AM – 12:00 PM</strong></td>
-									<td>Strength Training (Advanced) <br /> Trainer: Ankit Gupta</td>
-									<td>Room No: 21</td>
-								</tr>
-								<tr>
-									<td class="day">Friday</td>
-									<td><strong>10:00 AM – 11:00 AM</strong></td>
-									<td>Zumba / Dance Fitness (All Levels) <br /> Trainer: Karan Verma</td>
-									<td>Room No: 22</td>
-								</tr>
-								<tr>
-									<td class="day">Saturday</td>
-									<td><strong>9:00 AM – 10:00 AM</strong></td>
-									<td>Functional Training / CrossFit (Intermediate) <br /> Trainer: Siddharth Malhotra
-									</td>
-									<td>Room No: 21</td>
-								</tr>
-
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="gallery" id="gallery">
-			<h2>Workout Gallery</h2>
-			<div class="content">
-				<div class="box wow slideInLeft">
-					<img src="w1.jpeg" alt="gallery" />
-				</div>
-				<div class="box wow slideInRight">
-					<img src="w2.jpeg" alt="gallery" />
-				</div>
-				<div class="box wow slideInLeft">
-					<img src="w3.jpeg" alt="gallery" />
-				</div>
-				<div class="box wow slideInRight">
-					<img src="w4.jpeg" alt="gallery" />
-				</div>
-			</div>
-		</section>
-
-		<section class="price-package" id="price">
-			<div class="container">
-				<h2>Choose Your Package</h2>
-				<p class="title-p">"Select the fitness package that suits your goals and lifestyle. Whether you want to
-					build muscle, lose fat, or improve overall health, we have flexible plans designed for beginners,
-					intermediate, and advanced members. Enjoy personalized training, expert guidance, and full access to
-					our gym facilities with every package."</p>
-				<div class="content">
-					<div class="box wow bounceInUp">
-						<div class="inner">
-							<div class="price-tag">
-								₹1,499/Month
-							</div>
-							<div class="img">
-								<img src="p1.jpeg" alt="Body Building Package" />
-							</div>
-							<div class="text">
-								<h3>Beginner Body Building</h3>
-								<p>Personal Training Sessions</p>
-								<p>24/7 Gym Access</p>
-								<p>Gym & Cardio Equipment</p>
-								<p>Locker & Shower Facilities</p>
-								<a href="" class="btn">Join Now</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="box wow bounceInUp" data-wow-delay="0.2s">
-						<div class="inner">
-							<div class="price-tag">
-								₹3,499/3-Month
-							</div>
-							<div class="img">
-								<img src="p2.jpeg" alt="Standard Package" />
-							</div>
-							<div class="text">
-								<h3>Beginner Body Building</h3>
-								<p>Personal Training Sessions</p>
-								<p>24/7 Gym Access</p>
-								<p>Gym & Cardio Equipment</p>
-								<p>Locker & Shower Facilities</p>
-								<a href="" class="btn">Join Now</a>
-							</div>	 
-						</div>
-					</div>
-
-					<div class="box wow bounceInUp" data-wow-delay="0.4s">
-						<div class="inner">
-							<div class="price-tag">
-								₹8,499/Yearly
-							</div>
-							<div class="img">
-								<img src="p3.jpeg" alt="Premium Package" />
-							</div>
-							<div class="text">
-								<h3>Beginner Body Building</h3>
-								<p>Personal Training Sessions</p>
-								<p>24/7 Gym Access</p>
-								<p>Gym & Cardio Equipment</p>
-								<p>Locker & Shower Facilities</p>
-								<a href="" class="btn">Join Now</a>
-							</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="contact" id="contact">
-			<div class="container">
-				<h2 class="head">Contact Me</h2>
-				<div class="content">
-					<div class="box form wow slideInLeft">
-						<form>
-							<input type="text" placeholder="Your Full Name">
-							<input type="text" placeholder="Enter Your Email">
-							<input type="text" placeholder="Enter Mobile No.">
-							<textarea placeholder="Enter Message"></textarea>
-							<button type="submit">Send</button>
-						</form>
-					</div>
-					<div class="box text wow slideInRight">
-						<h2>Get Connected with Gym</h2>
-						<p class="title-p">"Stay in touch with us and kickstart your fitness journey. Reach out for
-							inquiries, membership details, or personalized training guidance. Our team is ready to
-							assist you every step of the way."</p>
-						<div class="info">
-							<ul>
-								<li><span class="fa fa-map-marker"></span> Rau, Indore</li>
-								<li><span class="fa fa-phone"></span> +9175849654</li>
-								<li><span class="fa fa-envelope"></span> gymnacity31@gmail.com</li>
-							</ul>
-						</div>
-						<div class="social">
-							<a href=""><span class="fa fa-whatsapp"></span></a>
-							<a href=""><span class="fa fa-facebook"></span></a>
-							<a href=""><span class="fa fa-instagram"></span></a>
-							<a href=""><span class="fa fa-telegram"></span></a>
-						</div>
-
-						<div class="copy">
-							<marquee> This is All Rights Reserved &copy; by the fitness Ministry of government ....
-							</marquee>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-		<script src="script.js"></script>
-		<script>
-			wow = new WOW(
-				{
-					animateClass: 'animated',
-					offset: 0,
-				}); wow.init();
-		</script>
+	<script src="script.js"></script>
 </body>
 
 </html>
